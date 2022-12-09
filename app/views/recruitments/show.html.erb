@@ -1,0 +1,53 @@
+<div class="photo">
+  <p class="sample">参加者 一覧</p>
+  <p class="sample1">(最大４人まで)</p> 
+  <div class= "time">
+    <%= @recruitment.datetime.strftime("%Y-%m-%d %H:%M") %>
+  </div>
+  <% @recruitment.participated_users.each do |u| %>
+    <a href="/users/<%= u.id %>" class="user-name"><%= u.name %></a>
+    <br>
+    <%= button_to "退会させる", recruitment_leave_path(box: u.id, recruitment_id: @recruitment.id, removed_user_name: u.name, admin_user_name: current_user.name),class:"red-card", method: :delete if @recruitment.user_id == current_user.id %>
+  <% end %>
+  <%= link_to "参加する", recruitment_join_path(unnchi: current_user.id, recruitment_id: @recruitment.id),class: "join",method: :post unless @recruitment.participated_users.include?(current_user) || @recruitment.participants >=4 %>
+  <br>
+  <%= button_to "不参加", recruitment_leave_path(box: current_user.id, recruitment_id: @recruitment.id),class: "not_join", method: :delete if @recruitment.participated_users.include?(current_user||@recruitment.user)%>
+  <br>
+  <%= link_to "募集一覧に戻る", recruitments_path,class: "backs" %>
+  <br>
+  <div class="to_chat" ontouchstart="">
+  <%= link_to "チャットへ", "/recruitments/#{@recruitment.id}/chat_messages", class:"to_chat"  if @recruitment.participated_users.include?(current_user) %>
+  </div>
+  <br>
+      <textarea id="bar" readonly>
+          <%= "#{recruitment_url(id: params[:id])}" %>
+          
+      </textarea>
+      <button class="btn-push" onclick="copyToClipboard()">リンクをcopy</button>
+
+        <script>
+          function copyToClipboard() {
+             // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("bar");
+             // コピー対象のテキストを選択する
+            copyTarget.select();
+             // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+             // コピーをお知らせする
+            alert("コピーできました！ : " + copyTarget.value);
+            }
+        </script>
+  <br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

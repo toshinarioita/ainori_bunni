@@ -1,0 +1,85 @@
+<link rel='stylesheet' href='chats.scss' type='text/css' media='all' />
+  
+  
+
+  <!-- ▼LINE風ここから -->
+  <div class="line__container">
+    <!-- タイトル -->
+    <div class="line__title">
+    <%= link_to "戻る", "/recruitments/#{@group.id}", {class: "back_to"} %>
+      チャットページ
+    </div>
+    <!-- ▼会話エリア scrollを外すと高さ固定解除 -->
+    <div class="line__contents scroll">
+    <% @messages.each do |message| %>
+      <% if  message.anounce  %>
+        <aside class= "middle-message">
+          <%= message.message %>
+        </aside>
+      <% elsif message.user_id==current_user.id %>
+        <div class="line__right">
+          <div class="text">
+            <%= message.message  %>
+          </div>
+        </div>
+      <% else %>
+        <div class="line__left">   
+          <div class="line__left-text">
+            <div class="name"><%= message.user.name %></div>
+            <div class="text"><%= message.message  %></div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+    </div>
+    <!--▲会話エリア ここまで -->
+  </div>
+  <!--▲LINE風ここまで -->                  
+  
+    
+  <div class="chat-messages_new">
+  <p class="title">メッセージ送信フォーム</p>
+   <%= form_with url: recruitment_chat_messages_path, model: @conversations, local: true, id: "chat-messages_new_form" do |f| %>
+   <%= text_field_tag 'chat_message[recruitment_id]', "#{@group.id}", id: "recruitment_chat_messages_#{@group.id}", type: 'hidden' %>
+    <div class="chat-messages_new_form">
+      <span class="chat-messages_new_form_input">
+      
+        <%= f.text_area :message, id: "chat-messages_new_form_input--area", name: 'chat_message[message]' %>
+      </span>
+      <span class="chat-massages_new_form_btn">
+        <%= f.submit '送信', id: "chat-messages-btn" %>
+        
+      </span>
+    </div>
+   <% end %>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+ 
+      
+      
+
+
+
+    
+

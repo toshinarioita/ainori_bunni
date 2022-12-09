@@ -1,0 +1,159 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.layout1 {
+  opacity:0;
+  transform: translate(0, -100px);
+  transition: all 1s cubic-bezier(1,.07,.62,1.01);
+ }
+.layout2 {
+  opacity:0;
+  transform: translate(80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout3 {
+  opacity: 0;
+  transform: translate(-80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout4 {
+  opacity: 0;
+  transform: translate(80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout5 {
+  opacity: 0;
+  transform: translate(-80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .features {
+  opacity: 0;
+  transform: translate(0, -110px);
+  transition: all 0.5s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout01 {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+.layout03 {
+  opacity: 0;
+  transform: translate(0, 60px);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+
+
+
+.place{
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.u-container-layout u-valign-top u-container-layout-2{
+  animation: SlideIn 1.6s infinite;
+}
+
+.u-tex-13 {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+.u-tex-13:before,  .u-tex-13:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+.u-tex-13:before {
+  left: 7px;
+}
+.u-tex-13:after {
+  right: 7px;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: image-url("oita_sta.jpg");
+}
+// .carousel-item active{
+//   height: 65vh;
+//   min-height: 350px;
+//   background: no-repeat center center scroll;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-image: image-url("oita_sta.jpg");
+// }
+// .carousel-inner{
+//   height: 65vh;
+//   min-height: 350px;
+//   background: no-repeat center center scroll;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-image: image-url("blue.jpg"); 
+// }
+.carousel-inner {
+  height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: image-url("hospital.jpg");
+ }
+.layout1 {
+  opacity:0;
+  transform: translate(0, -100px);
+  transition: all 1s cubic-bezier(1,.07,.62,1.01);
+ }
+.layout2 {
+  opacity:0;
+  transform: translate(80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout3 {
+  opacity: 0;
+  transform: translate(-80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout4 {
+  opacity: 0;
+  transform: translate(80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout5 {
+  opacity: 0;
+  transform: translate(-80px, 0);
+  transition: all 0.8s cubic-bezier(1,.07,.62,1.01);
+ }
+ .features {
+  opacity: 0;
+  transform: translate(0, -110px);
+  transition: all 0.5s cubic-bezier(1,.07,.62,1.01);
+ }
+ .layout01 {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+.layout03 {
+  opacity: 0;
+  transform: translate(0, 60px);
+  transition: all 0.5s cubic-bezier(1,.07,.62,1.01);
+ }

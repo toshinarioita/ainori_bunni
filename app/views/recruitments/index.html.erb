@@ -1,0 +1,34 @@
+<p class="list">募 集 L i s t</p>
+<div class="new_page" ontouchstart="">
+  <%= link_to "top pageへ", tops_link_path,{class: "top_page"}%>
+  <%= button_to 'ログアウト', destroy_user_session_path, {method: :delete, class: "border"} %>
+<br>
+<%= link_to "新規募集ページへ", recruitments_new_path, {class: "new_page"} %>
+<div id="sec" ontouchstart="">
+  <ul>
+      <div class="recruitments-container">
+  <% @recruitments.each do |t| %>
+    <li>
+      <span class="fa fa-code"></span>
+
+      <p class="title01">Let's Share!</p>
+      <br>
+    <div class="recruitment_list">
+      <%= t.datetime.strftime("%m-%d %H:%M")  %>
+      <br>
+      <%= "参加人数" =%>
+      <%= t.participants %>
+      <br>
+      <%= link_to "詳細へ", recruitment_path(t.id) %>
+      <% if user_signed_in? && current_user.id == t.user_id %>
+      <br><br>
+      <%=button_to "削除する", recruitment_path(t.id), method: :delete %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+    </li>
+  </ul>
+</div>
+</div>

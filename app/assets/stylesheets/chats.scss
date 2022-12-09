@@ -1,0 +1,139 @@
+/*/////////////////////////////////////////////////
+//LINE風チャット画面(会話方式)を記事に表示する方法
+/////////////////////////////////////////////////*/
+.back_to{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-weight: bold;
+}
+.line__container {
+    padding:0;
+    background: #7494c0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-size: 80%;
+  }
+  
+  /* タイトル部分 */
+  .line__container .line__title {
+    background: #161615;
+    padding: 30px;
+    text-align: center;
+    font-size: 150%;
+    color: white;
+  }
+  
+  /* 会話部分 */
+  .line__container .line__contents {
+    padding: 10px;
+    overflow: hidden;
+    line-height: 135%;
+  }
+  
+  .line__container .scroll {
+    height: 700px;
+    overflow-y: scroll;
+    width:100%;
+  }
+  
+  
+  
+  /* 相手の会話 */
+  .line__container .line__left {
+      width: 100%;
+      position: relative;
+      display: block;
+      margin-bottom: 5px;
+      max-width: 80%;
+      clear: both;
+  }
+  
+ 
+  
+  
+  
+  .line__container .line__left .line__left-text {
+    margin-left: 70px;
+  }
+  
+  .line__container .line__left .line__left-text .name {
+    font-size: 80%;
+    color: #ffffff;
+  }
+  
+  /* コメントエリア */
+  .line__container .line__left .text {
+    margin: 0;
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ffffff;
+  }
+  
+  /* 吹き出し */
+  .line__container .line__left .text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -10px;
+    top: 10px;
+    border-right: 20px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  /* 自分の会話 */
+  .line__container .line__right {
+      position: relative;
+      display: block;
+      margin: 5px 0;
+      max-width: 75%;
+      float: right;
+      margin-right: 15px;
+      clear: both;
+  }
+  
+  /* コメントエリア */
+  .line__container .line__right .text {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #8de055;
+    margin: 0;
+    margin-left: 80px;
+  }
+  
+  /* 吹き出し */
+  .line__container .line__right .text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    right: -10px;
+    top: 10px;
+    border-left: 20px solid #8de055;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  
+  
+  
+  
+  
+.chat-messages_new {
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding:  0;
+    height: 150px;
+    position: fixed;/*←絶対位置*/
+    bottom: 0px; /*下に固定*/
+}#chat-messages_new_form_input--area{
+  color: black;
+}

@@ -1,0 +1,22 @@
+<div class="photo1">
+<p class="list">新 規 募 集</p>
+<br>
+<%= link_to "top pageへ", tops_link_path ,{class: "new_page"}%>
+<br>
+<br>
+<%= form_for @recruitment do |f| %>
+  <div class='input-group date datepicker'>
+    <%= f.datetime_field :datetime, class: 'form-control' %>
+  </div>
+  <br>
+  <%= f.submit "募集する", {class: "reset button-shadow"} %>
+<% end %>
+<br>
+<br>
+
+<%= link_to "募集一覧に戻る", recruitments_path, {class: "top_page"}%>
+</div>
+
+
+
+
